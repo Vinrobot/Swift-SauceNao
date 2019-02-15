@@ -10,6 +10,10 @@
 		BF3AE02B221618E200F30004 /* Swift_SauceNao.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF3AE021221618E200F30004 /* Swift_SauceNao.framework */; };
 		BF3AE030221618E200F30004 /* Swift_SauceNaoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3AE02F221618E200F30004 /* Swift_SauceNaoTests.swift */; };
 		BF3AE032221618E200F30004 /* Swift_SauceNao.h in Headers */ = {isa = PBXBuildFile; fileRef = BF3AE024221618E200F30004 /* Swift_SauceNao.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BFC29A4422161D1C00448D02 /* SauceNao.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC29A4322161D1C00448D02 /* SauceNao.swift */; };
+		BFC29A462216224700448D02 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC29A452216224700448D02 /* Database.swift */; };
+		BFC29A48221625E100448D02 /* Limiter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC29A47221625E100448D02 /* Limiter.swift */; };
+		BFC29A4B221638CA00448D02 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC29A4A221638CA00448D02 /* Alamofire.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +34,10 @@
 		BF3AE02F221618E200F30004 /* Swift_SauceNaoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swift_SauceNaoTests.swift; sourceTree = "<group>"; };
 		BF3AE031221618E200F30004 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF3AE03B2216196800F30004 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		BFC29A4322161D1C00448D02 /* SauceNao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SauceNao.swift; sourceTree = "<group>"; };
+		BFC29A452216224700448D02 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		BFC29A47221625E100448D02 /* Limiter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Limiter.swift; sourceTree = "<group>"; };
+		BFC29A4A221638CA00448D02 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFC29A4B221638CA00448D02 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +67,7 @@
 				BF3AE023221618E200F30004 /* Swift-SauceNao */,
 				BF3AE02E221618E200F30004 /* Swift-SauceNaoTests */,
 				BF3AE022221618E200F30004 /* Products */,
+				BFC29A49221638CA00448D02 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -75,6 +85,9 @@
 			children = (
 				BF3AE024221618E200F30004 /* Swift_SauceNao.h */,
 				BF3AE025221618E200F30004 /* Info.plist */,
+				BFC29A4322161D1C00448D02 /* SauceNao.swift */,
+				BFC29A452216224700448D02 /* Database.swift */,
+				BFC29A47221625E100448D02 /* Limiter.swift */,
 			);
 			path = "Swift-SauceNao";
 			sourceTree = "<group>";
@@ -86,6 +99,14 @@
 				BF3AE031221618E200F30004 /* Info.plist */,
 			);
 			path = "Swift-SauceNaoTests";
+			sourceTree = "<group>";
+		};
+		BFC29A49221638CA00448D02 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BFC29A4A221638CA00448D02 /* Alamofire.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,6 +171,7 @@
 				TargetAttributes = {
 					BF3AE020221618E200F30004 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 					BF3AE029221618E200F30004 = {
@@ -198,6 +220,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFC29A48221625E100448D02 /* Limiter.swift in Sources */,
+				BFC29A462216224700448D02 /* Database.swift in Sources */,
+				BFC29A4422161D1C00448D02 /* SauceNao.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,6 +361,7 @@
 		BF3AE036221618E200F30004 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -343,12 +369,17 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "Swift-SauceNao/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.vinrobot.Swift-SauceNao";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -357,6 +388,7 @@
 		BF3AE037221618E200F30004 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -364,6 +396,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "Swift-SauceNao/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -378,6 +414,7 @@
 		BF3AE039221618E200F30004 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7BUCP8PBB4;
 				INFOPLIST_FILE = "Swift-SauceNaoTests/Info.plist";
@@ -392,6 +429,7 @@
 		BF3AE03A221618E200F30004 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7BUCP8PBB4;
 				INFOPLIST_FILE = "Swift-SauceNaoTests/Info.plist";
