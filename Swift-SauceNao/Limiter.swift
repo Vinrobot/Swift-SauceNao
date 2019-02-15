@@ -58,7 +58,9 @@ public final class Limiter {
 
 	public func cancelExecute() {
 		syncQueue.sync {
-			self.count -= 1
+			if self.count > 0 {
+				self.count -= 1
+			}
 		}
 	}
 
@@ -71,7 +73,7 @@ public final class Limiter {
 	@objc
 	public func reset() {
 		syncQueue.sync {
-			self.count = count
+			self.count = 0
 		}
 	}
 }
