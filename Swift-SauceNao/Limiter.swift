@@ -15,7 +15,7 @@ enum LimiterError: Error {
 public final class Limiter {
 
 	public static let longLimiter = Limiter(count: 300, time: 86400)
-	public static let shortLimiter = Limiter(count: 20, time: 30)
+	public static let shortLimiter = Limiter(count: 12, time: 30)
 
 	public let countLimit: UInt
 	public let timeLimit: TimeInterval

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		BF150C432226F21200CDD1AC /* MultipartFormData+AppendString.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF150C422226F21200CDD1AC /* MultipartFormData+AppendString.swift */; };
 		BF150C442226FC0F00CDD1AC /* MultipartFormData+AppendString.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF150C422226F21200CDD1AC /* MultipartFormData+AppendString.swift */; };
+		BF150C462226FF8500CDD1AC /* SauceNaoResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF150C452226FF8500CDD1AC /* SauceNaoResult.swift */; };
+		BF150C4722270E1600CDD1AC /* SauceNaoResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF150C452226FF8500CDD1AC /* SauceNaoResult.swift */; };
 		BF3AE02B221618E200F30004 /* Swift_SauceNao.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF3AE021221618E200F30004 /* Swift_SauceNao.framework */; };
 		BF3AE030221618E200F30004 /* Swift_SauceNaoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3AE02F221618E200F30004 /* Swift_SauceNaoTests.swift */; };
 		BF3AE032221618E200F30004 /* Swift_SauceNao.h in Headers */ = {isa = PBXBuildFile; fileRef = BF3AE024221618E200F30004 /* Swift_SauceNao.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -44,6 +46,7 @@
 
 /* Begin PBXFileReference section */
 		BF150C422226F21200CDD1AC /* MultipartFormData+AppendString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MultipartFormData+AppendString.swift"; sourceTree = "<group>"; };
+		BF150C452226FF8500CDD1AC /* SauceNaoResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SauceNaoResult.swift; sourceTree = "<group>"; };
 		BF3AE021221618E200F30004 /* Swift_SauceNao.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Swift_SauceNao.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF3AE024221618E200F30004 /* Swift_SauceNao.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Swift_SauceNao.h; sourceTree = "<group>"; };
 		BF3AE025221618E200F30004 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -135,6 +138,7 @@
 				BFC29A4322161D1C00448D02 /* SauceNao.swift */,
 				BFC29A452216224700448D02 /* Database.swift */,
 				BFC29A47221625E100448D02 /* Limiter.swift */,
+				BF150C452226FF8500CDD1AC /* SauceNaoResult.swift */,
 			);
 			path = "Swift-SauceNao";
 			sourceTree = "<group>";
@@ -373,6 +377,7 @@
 				BF150C432226F21200CDD1AC /* MultipartFormData+AppendString.swift in Sources */,
 				BFC29A462216224700448D02 /* Database.swift in Sources */,
 				BFC29A4422161D1C00448D02 /* SauceNao.swift in Sources */,
+				BF150C462226FF8500CDD1AC /* SauceNaoResult.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,6 +397,7 @@
 				BF150C442226FC0F00CDD1AC /* MultipartFormData+AppendString.swift in Sources */,
 				BFC29A8A2216EE9E00448D02 /* Database.swift in Sources */,
 				BFC29A892216EE9E00448D02 /* SauceNao.swift in Sources */,
+				BF150C4722270E1600CDD1AC /* SauceNaoResult.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
