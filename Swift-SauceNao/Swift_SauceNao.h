@@ -6,7 +6,7 @@
 //  Copyright © 2019 Vinrobot. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 //! Project version number for Swift_SauceNao.
 FOUNDATION_EXPORT double Swift_SauceNaoVersionNumber;

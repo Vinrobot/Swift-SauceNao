@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF150C432226F21200CDD1AC /* MultipartFormData+AppendString.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF150C422226F21200CDD1AC /* MultipartFormData+AppendString.swift */; };
+		BF150C442226FC0F00CDD1AC /* MultipartFormData+AppendString.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF150C422226F21200CDD1AC /* MultipartFormData+AppendString.swift */; };
 		BF3AE02B221618E200F30004 /* Swift_SauceNao.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF3AE021221618E200F30004 /* Swift_SauceNao.framework */; };
 		BF3AE030221618E200F30004 /* Swift_SauceNaoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3AE02F221618E200F30004 /* Swift_SauceNaoTests.swift */; };
 		BF3AE032221618E200F30004 /* Swift_SauceNao.h in Headers */ = {isa = PBXBuildFile; fileRef = BF3AE024221618E200F30004 /* Swift_SauceNao.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -14,6 +16,13 @@
 		BFC29A462216224700448D02 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC29A452216224700448D02 /* Database.swift */; };
 		BFC29A48221625E100448D02 /* Limiter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC29A47221625E100448D02 /* Limiter.swift */; };
 		BFC29A4B221638CA00448D02 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC29A4A221638CA00448D02 /* Alamofire.framework */; };
+		BFC29A762216EB7B00448D02 /* Swift_SauceNao.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC29A6D2216EB7A00448D02 /* Swift_SauceNao.framework */; };
+		BFC29A842216EBCD00448D02 /* Swift_SauceNao.h in Headers */ = {isa = PBXBuildFile; fileRef = BF3AE024221618E200F30004 /* Swift_SauceNao.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BFC29A852216EBD700448D02 /* Swift_SauceNaoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3AE02F221618E200F30004 /* Swift_SauceNaoTests.swift */; };
+		BFC29A882216EE1C00448D02 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC29A872216EE1C00448D02 /* Alamofire.framework */; };
+		BFC29A892216EE9E00448D02 /* SauceNao.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC29A4322161D1C00448D02 /* SauceNao.swift */; };
+		BFC29A8A2216EE9E00448D02 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC29A452216224700448D02 /* Database.swift */; };
+		BFC29A8B2216EE9E00448D02 /* Limiter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC29A47221625E100448D02 /* Limiter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,13 +33,21 @@
 			remoteGlobalIDString = BF3AE020221618E200F30004;
 			remoteInfo = "Swift-SauceNao";
 		};
+		BFC29A772216EB7B00448D02 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BF3AE018221618E100F30004 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BFC29A6C2216EB7A00448D02;
+			remoteInfo = "Swift-SauceNao_macOS";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BF150C422226F21200CDD1AC /* MultipartFormData+AppendString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MultipartFormData+AppendString.swift"; sourceTree = "<group>"; };
 		BF3AE021221618E200F30004 /* Swift_SauceNao.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Swift_SauceNao.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF3AE024221618E200F30004 /* Swift_SauceNao.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Swift_SauceNao.h; sourceTree = "<group>"; };
 		BF3AE025221618E200F30004 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BF3AE02A221618E200F30004 /* Swift-SauceNaoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Swift-SauceNaoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF3AE02A221618E200F30004 /* Swift-SauceNao_iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Swift-SauceNao_iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF3AE02F221618E200F30004 /* Swift_SauceNaoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swift_SauceNaoTests.swift; sourceTree = "<group>"; };
 		BF3AE031221618E200F30004 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF3AE03B2216196800F30004 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -38,6 +55,9 @@
 		BFC29A452216224700448D02 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		BFC29A47221625E100448D02 /* Limiter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Limiter.swift; sourceTree = "<group>"; };
 		BFC29A4A221638CA00448D02 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		BFC29A6D2216EB7A00448D02 /* Swift_SauceNao.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Swift_SauceNao.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFC29A752216EB7A00448D02 /* Swift-SauceNao_macOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Swift-SauceNao_macOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFC29A872216EE1C00448D02 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/Mac/Alamofire.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +77,33 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BFC29A692216EB7A00448D02 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFC29A882216EE1C00448D02 /* Alamofire.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFC29A722216EB7A00448D02 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFC29A762216EB7B00448D02 /* Swift_SauceNao.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BF150C412226F0CC00CDD1AC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BF150C422226F21200CDD1AC /* MultipartFormData+AppendString.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		BF3AE017221618E100F30004 = {
 			isa = PBXGroup;
 			children = (
@@ -75,7 +119,9 @@
 			isa = PBXGroup;
 			children = (
 				BF3AE021221618E200F30004 /* Swift_SauceNao.framework */,
-				BF3AE02A221618E200F30004 /* Swift-SauceNaoTests.xctest */,
+				BF3AE02A221618E200F30004 /* Swift-SauceNao_iOSTests.xctest */,
+				BFC29A6D2216EB7A00448D02 /* Swift_SauceNao.framework */,
+				BFC29A752216EB7A00448D02 /* Swift-SauceNao_macOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -83,6 +129,7 @@
 		BF3AE023221618E200F30004 /* Swift-SauceNao */ = {
 			isa = PBXGroup;
 			children = (
+				BF150C412226F0CC00CDD1AC /* Extensions */,
 				BF3AE024221618E200F30004 /* Swift_SauceNao.h */,
 				BF3AE025221618E200F30004 /* Info.plist */,
 				BFC29A4322161D1C00448D02 /* SauceNao.swift */,
@@ -104,6 +151,7 @@
 		BFC29A49221638CA00448D02 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BFC29A872216EE1C00448D02 /* Alamofire.framework */,
 				BFC29A4A221638CA00448D02 /* Alamofire.framework */,
 			);
 			name = Frameworks;
@@ -120,12 +168,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BFC29A6A2216EB7A00448D02 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFC29A842216EBCD00448D02 /* Swift_SauceNao.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		BF3AE020221618E200F30004 /* Swift-SauceNao */ = {
+		BF3AE020221618E200F30004 /* Swift-SauceNao_iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BF3AE035221618E200F30004 /* Build configuration list for PBXNativeTarget "Swift-SauceNao" */;
+			buildConfigurationList = BF3AE035221618E200F30004 /* Build configuration list for PBXNativeTarget "Swift-SauceNao_iOS" */;
 			buildPhases = (
 				BF3AE01C221618E200F30004 /* Sources */,
 				BF3AE01D221618E200F30004 /* Frameworks */,
@@ -136,27 +192,65 @@
 			);
 			dependencies = (
 			);
-			name = "Swift-SauceNao";
+			name = "Swift-SauceNao_iOS";
 			productName = "Swift-SauceNao";
 			productReference = BF3AE021221618E200F30004 /* Swift_SauceNao.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		BF3AE029221618E200F30004 /* Swift-SauceNaoTests */ = {
+		BF3AE029221618E200F30004 /* Swift-SauceNao_iOSTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BF3AE038221618E200F30004 /* Build configuration list for PBXNativeTarget "Swift-SauceNaoTests" */;
+			buildConfigurationList = BF3AE038221618E200F30004 /* Build configuration list for PBXNativeTarget "Swift-SauceNao_iOSTests" */;
 			buildPhases = (
 				BF3AE026221618E200F30004 /* Sources */,
 				BF3AE027221618E200F30004 /* Frameworks */,
 				BF3AE028221618E200F30004 /* Resources */,
+				BFC29A8D2216F90600448D02 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				BF3AE02D221618E200F30004 /* PBXTargetDependency */,
 			);
-			name = "Swift-SauceNaoTests";
+			name = "Swift-SauceNao_iOSTests";
 			productName = "Swift-SauceNaoTests";
-			productReference = BF3AE02A221618E200F30004 /* Swift-SauceNaoTests.xctest */;
+			productReference = BF3AE02A221618E200F30004 /* Swift-SauceNao_iOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BFC29A6C2216EB7A00448D02 /* Swift-SauceNao_macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BFC29A7E2216EB7B00448D02 /* Build configuration list for PBXNativeTarget "Swift-SauceNao_macOS" */;
+			buildPhases = (
+				BFC29A682216EB7A00448D02 /* Sources */,
+				BFC29A692216EB7A00448D02 /* Frameworks */,
+				BFC29A6A2216EB7A00448D02 /* Headers */,
+				BFC29A6B2216EB7A00448D02 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Swift-SauceNao_macOS";
+			productName = "Swift-SauceNao_macOS";
+			productReference = BFC29A6D2216EB7A00448D02 /* Swift_SauceNao.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		BFC29A742216EB7A00448D02 /* Swift-SauceNao_macOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BFC29A812216EB7B00448D02 /* Build configuration list for PBXNativeTarget "Swift-SauceNao_macOSTests" */;
+			buildPhases = (
+				BFC29A712216EB7A00448D02 /* Sources */,
+				BFC29A722216EB7A00448D02 /* Frameworks */,
+				BFC29A732216EB7A00448D02 /* Resources */,
+				BFC29A8C2216F8FE00448D02 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BFC29A782216EB7B00448D02 /* PBXTargetDependency */,
+			);
+			name = "Swift-SauceNao_macOSTests";
+			productName = "Swift-SauceNao_macOSTests";
+			productReference = BFC29A752216EB7A00448D02 /* Swift-SauceNao_macOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -178,6 +272,14 @@
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
 					};
+					BFC29A6C2216EB7A00448D02 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					BFC29A742216EB7A00448D02 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = BF3AE01B221618E200F30004 /* Build configuration list for PBXProject "Swift-SauceNao" */;
@@ -192,8 +294,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BF3AE020221618E200F30004 /* Swift-SauceNao */,
-				BF3AE029221618E200F30004 /* Swift-SauceNaoTests */,
+				BF3AE020221618E200F30004 /* Swift-SauceNao_iOS */,
+				BF3AE029221618E200F30004 /* Swift-SauceNao_iOSTests */,
+				BFC29A6C2216EB7A00448D02 /* Swift-SauceNao_macOS */,
+				BFC29A742216EB7A00448D02 /* Swift-SauceNao_macOSTests */,
 			);
 		};
 /* End PBXProject section */
@@ -213,7 +317,52 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BFC29A6B2216EB7A00448D02 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFC29A732216EB7A00448D02 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		BFC29A8C2216F8FE00448D02 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/Mac/Alamofire.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		BFC29A8D2216F90600448D02 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BF3AE01C221618E200F30004 /* Sources */ = {
@@ -221,6 +370,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFC29A48221625E100448D02 /* Limiter.swift in Sources */,
+				BF150C432226F21200CDD1AC /* MultipartFormData+AppendString.swift in Sources */,
 				BFC29A462216224700448D02 /* Database.swift in Sources */,
 				BFC29A4422161D1C00448D02 /* SauceNao.swift in Sources */,
 			);
@@ -234,13 +384,37 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BFC29A682216EB7A00448D02 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFC29A8B2216EE9E00448D02 /* Limiter.swift in Sources */,
+				BF150C442226FC0F00CDD1AC /* MultipartFormData+AppendString.swift in Sources */,
+				BFC29A8A2216EE9E00448D02 /* Database.swift in Sources */,
+				BFC29A892216EE9E00448D02 /* SauceNao.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFC29A712216EB7A00448D02 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFC29A852216EBD700448D02 /* Swift_SauceNaoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
 		BF3AE02D221618E200F30004 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = BF3AE020221618E200F30004 /* Swift-SauceNao */;
+			target = BF3AE020221618E200F30004 /* Swift-SauceNao_iOS */;
 			targetProxy = BF3AE02C221618E200F30004 /* PBXContainerItemProxy */;
+		};
+		BFC29A782216EB7B00448D02 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BFC29A6C2216EB7A00448D02 /* Swift-SauceNao_macOS */;
+			targetProxy = BFC29A772216EB7B00448D02 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -361,6 +535,7 @@
 		BF3AE036221618E200F30004 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -376,8 +551,8 @@
 				INFOPLIST_FILE = "Swift-SauceNao/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "net.vinrobot.Swift-SauceNao";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.vinrobot.Swift-SauceNao-iOS";
+				PRODUCT_NAME = Swift_SauceNao;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
@@ -388,6 +563,7 @@
 		BF3AE037221618E200F30004 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -403,8 +579,8 @@
 				INFOPLIST_FILE = "Swift-SauceNao/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "net.vinrobot.Swift-SauceNao";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.vinrobot.Swift-SauceNao-iOS";
+				PRODUCT_NAME = Swift_SauceNao;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -414,11 +590,11 @@
 		BF3AE039221618E200F30004 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7BUCP8PBB4;
 				INFOPLIST_FILE = "Swift-SauceNaoTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.vinrobot.Swift-SauceNaoTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -429,15 +605,109 @@
 		BF3AE03A221618E200F30004 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7BUCP8PBB4;
 				INFOPLIST_FILE = "Swift-SauceNaoTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.vinrobot.Swift-SauceNaoTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		BFC29A7F2216EB7B00448D02 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 7BUCP8PBB4;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "Swift-SauceNao/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = "net.vinrobot.Swift-SauceNao-macOS";
+				PRODUCT_NAME = Swift_SauceNao;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		BFC29A802216EB7B00448D02 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 7BUCP8PBB4;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "Swift-SauceNao/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = "net.vinrobot.Swift-SauceNao-macOS";
+				PRODUCT_NAME = Swift_SauceNao;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		BFC29A822216EB7B00448D02 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 7BUCP8PBB4;
+				INFOPLIST_FILE = "Swift-SauceNaoTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = "net.vinrobot.Swift-SauceNao-macOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		BFC29A832216EB7B00448D02 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 7BUCP8PBB4;
+				INFOPLIST_FILE = "Swift-SauceNaoTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = "net.vinrobot.Swift-SauceNao-macOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -453,7 +723,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BF3AE035221618E200F30004 /* Build configuration list for PBXNativeTarget "Swift-SauceNao" */ = {
+		BF3AE035221618E200F30004 /* Build configuration list for PBXNativeTarget "Swift-SauceNao_iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BF3AE036221618E200F30004 /* Debug */,
@@ -462,11 +732,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BF3AE038221618E200F30004 /* Build configuration list for PBXNativeTarget "Swift-SauceNaoTests" */ = {
+		BF3AE038221618E200F30004 /* Build configuration list for PBXNativeTarget "Swift-SauceNao_iOSTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BF3AE039221618E200F30004 /* Debug */,
 				BF3AE03A221618E200F30004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BFC29A7E2216EB7B00448D02 /* Build configuration list for PBXNativeTarget "Swift-SauceNao_macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BFC29A7F2216EB7B00448D02 /* Debug */,
+				BFC29A802216EB7B00448D02 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BFC29A812216EB7B00448D02 /* Build configuration list for PBXNativeTarget "Swift-SauceNao_macOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BFC29A822216EB7B00448D02 /* Debug */,
+				BFC29A832216EB7B00448D02 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -21,29 +21,39 @@ public class SauceNao {
 		self.testmode = testmode ? "1" : "0"
 	}
 
-	public func search(url: URL, local: Bool = false) -> [String] {
-		return [String]()
-	}
-
-	public func search(data: Data, numres: UInt = 5, completion: @escaping (_ result: Any?, _ error: Error?) -> Void) {
+	public func search(url: String, numres: UInt = 16, completion: @escaping (_ result: Any?, _ error: Error?) -> Void) {
 		guard self.checkLimiters() else {
 			return
 		}
 
-		var parameters = [String: String]()
-		parameters["api_key"] = self.apiKey
-		parameters["output_type"] = "2"
-		parameters["testmode"] = self.testmode
+		self.doUpload(numres, formData: { (form) in
+			form.append("999", withName: "db")
+			form.append(url, withName: "url")
+		}, completion: completion)
+	}
+
+	public func search(data: Data, fileName: String, mimeType: String, numres: UInt = 16, completion: @escaping (_ result: Any?, _ error: Error?) -> Void) {
+		guard self.checkLimiters() else {
+			return
+		}
 		//parameters["dbmask"] = "0"
 		//parameters["dbmaski"] = "0"
-		//parameters["db"] = "999"
-		parameters["numres"] = String(numres)
+		self.doUpload(numres, formData: { (form) in
+			form.append(data, withName: "file", fileName: fileName, mimeType: mimeType)
+			form.append("999", withName: "db")
+		}) { (obj, err) in
+			completion(obj, err)
+		}
+	}
 
-		self.doUpload(formData: { (form) in
-			for (key, value) in parameters {
-				form.append(value.data(using: .utf8)!, withName: key)
-			}
-			form.append(data, withName: "file")
+	public func search(file: URL, numres: UInt = 16, completion: @escaping (_ result: Any?, _ error: Error?) -> Void) {
+		guard self.checkLimiters() else {
+			return
+		}
+
+		self.doUpload(numres, formData: { (form) in
+			form.append(file, withName: "file")
+			form.append("999", withName: "db")
 		}) { (obj, err) in
 			completion(obj, err)
 		}
@@ -60,13 +70,20 @@ public class SauceNao {
 		return true
 	}
 
-	private func doUpload(formData: @escaping (MultipartFormData) -> Void, completion: @escaping (_ result: Any?, _ error: Error?) -> Void) {
+	private func doUpload(_ numres: UInt, formData: @escaping (MultipartFormData) -> Void, completion: @escaping (_ result: Any?, _ error: Error?) -> Void) {
 		var request = URLRequest(url: SauceNao.defaultUrl)
 		request.httpMethod = "POST"
-		Alamofire.upload(multipartFormData: formData, with: request) { (result) in
+		let queue = DispatchQueue(label: "request")
+		SessionManager.default.upload(multipartFormData: { (form) in
+			form.append(self.apiKey, withName: "api_key")
+			form.append("2", withName: "output_type")
+			form.append(self.testmode, withName: "testmode")
+			form.append(String(numres), withName: "numres")
+			formData(form)
+		}, with: request, queue: queue) { (result) in
 			switch result {
 			case .success(let request, _, _):
-				request.responseJSON { (response) in
+				request.responseJSON(queue: queue, options: []) { response in
 					if let error = response.result.error {
 						completion(nil, error)
 					}

@@ -67,6 +67,7 @@ playground.xcworkspace
 .build/
 
 # Carthage
+Carthage/Checkouts
 Carthage/Build
 
 # fastlane

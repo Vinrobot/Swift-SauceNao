@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "BF3AE020221618E200F30004"
                BuildableName = "Swift_SauceNao.framework"
-               BlueprintName = "Swift-SauceNao"
+               BlueprintName = "Swift-SauceNao_iOS"
                ReferencedContainer = "container:Swift-SauceNao.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -34,8 +34,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "BF3AE029221618E200F30004"
-               BuildableName = "Swift-SauceNaoTests.xctest"
-               BlueprintName = "Swift-SauceNaoTests"
+               BuildableName = "Swift-SauceNao_iOSTests.xctest"
+               BlueprintName = "Swift-SauceNao_iOSTests"
                ReferencedContainer = "container:Swift-SauceNao.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -45,7 +45,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BF3AE020221618E200F30004"
             BuildableName = "Swift_SauceNao.framework"
-            BlueprintName = "Swift-SauceNao"
+            BlueprintName = "Swift-SauceNao_iOS"
             ReferencedContainer = "container:Swift-SauceNao.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -68,7 +68,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BF3AE020221618E200F30004"
             BuildableName = "Swift_SauceNao.framework"
-            BlueprintName = "Swift-SauceNao"
+            BlueprintName = "Swift-SauceNao_iOS"
             ReferencedContainer = "container:Swift-SauceNao.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -86,7 +86,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BF3AE020221618E200F30004"
             BuildableName = "Swift_SauceNao.framework"
-            BlueprintName = "Swift-SauceNao"
+            BlueprintName = "Swift-SauceNao_iOS"
             ReferencedContainer = "container:Swift-SauceNao.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
