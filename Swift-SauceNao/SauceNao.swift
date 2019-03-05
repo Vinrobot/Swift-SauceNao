@@ -11,7 +11,11 @@ import Alamofire
 
 public class SauceNao {
 
+	public typealias CompletionBlock = (SauceNaoResult?, Error?) -> Void
+
 	public static let defaultUrl: URL = URL(string: "https://saucenao.com/search.php")!
+	public static let defaultNumres: UInt = 16
+	public static let defaultDatabaseId: String = "999"
 
 	private let apiKey: String
 	private let testmode: String
@@ -21,39 +25,34 @@ public class SauceNao {
 		self.testmode = testmode ? "1" : "0"
 	}
 
-	public func search(url: String, db: String = "999", numres: UInt = 16, completion: @escaping (_ result: SauceNaoResult?, _ error: Error?) -> Void) {
-		guard self.checkLimiters() else {
-			return
-		}
+	public func search(url: String, db: Database, numres: UInt = SauceNao.defaultNumres, completion: @escaping CompletionBlock) {
+		self.search(url: url, db: String(db.id), numres: numres, completion: completion)
+	}
 
-		self.doUpload(db, numres, formData: { (form) in
+	public func search(url: String, db: String = SauceNao.defaultDatabaseId, numres: UInt = SauceNao.defaultNumres, completion: @escaping CompletionBlock) {
+		self.doSearch(db, numres, formData: { (form) in
 			form.append(url, withName: "url")
 		}, completion: completion)
 	}
 
-	public func search(data: Data, fileName: String, mimeType: String, db: String = "999", numres: UInt = 16, completion: @escaping (_ result: SauceNaoResult?, _ error: Error?) -> Void) {
-		guard self.checkLimiters() else {
-			return
-		}
-		//parameters["dbmask"] = "0"
-		//parameters["dbmaski"] = "0"
-		self.doUpload(db, numres, formData: { (form) in
-			form.append(data, withName: "file", fileName: fileName, mimeType: mimeType)
-		}) { (obj, err) in
-			completion(obj, err)
-		}
+	public func search(data: Data, fileName: String, mimeType: String, db: Database, numres: UInt = SauceNao.defaultNumres, completion: @escaping CompletionBlock) {
+		self.search(data: data, fileName: fileName, mimeType: mimeType, db: String(db.id), numres: numres, completion: completion)
 	}
 
-	public func search(file: URL, db: String = "999", numres: UInt = 16, completion: @escaping (_ result: SauceNaoResult?, _ error: Error?) -> Void) {
-		guard self.checkLimiters() else {
-			return
-		}
+	public func search(data: Data, fileName: String, mimeType: String, db: String = SauceNao.defaultDatabaseId, numres: UInt = SauceNao.defaultNumres, completion: @escaping CompletionBlock) {
+		self.doSearch(db, numres, formData: { (form) in
+			form.append(data, withName: "file", fileName: fileName, mimeType: mimeType)
+		}, completion: completion)
+	}
 
-		self.doUpload(db, numres, formData: { (form) in
+	public func search(file: URL, db: Database, numres: UInt = SauceNao.defaultNumres, completion: @escaping CompletionBlock) {
+		self.search(file: file, db: String(db.id), numres: numres, completion: completion)
+	}
+
+	public func search(file: URL, db: String = SauceNao.defaultDatabaseId, numres: UInt = SauceNao.defaultNumres, completion: @escaping CompletionBlock) {
+		self.doSearch(db, numres, formData: { (form) in
 			form.append(file, withName: "file")
-		}) { (obj, err) in
-			completion(obj, err)
-		}
+		}, completion: completion)
 	}
 
 	private func checkLimiters() -> Bool {
@@ -67,7 +66,12 @@ public class SauceNao {
 		return true
 	}
 
-	private func doUpload(_ db: String, _ numres: UInt, formData: @escaping (MultipartFormData) -> Void, completion: @escaping (_ result: SauceNaoResult?, _ error: Error?) -> Void) {
+	private func doSearch(_ db: String, _ numres: UInt, formData: @escaping (MultipartFormData) -> Void, completion: @escaping CompletionBlock, checkLimiter check: Bool = true) {
+		guard check || self.checkLimiters() else {
+			completion(nil, LimiterError.rateLimited)
+			return
+		}
+
 		var urlcp = URLComponents(url: SauceNao.defaultUrl, resolvingAgainstBaseURL: false)!
 		urlcp.queryItems = [ URLQueryItem(name: "numres", value: String(numres)), URLQueryItem(name: "db", value: db) ]
 		urlcp.percentEncodedQuery = urlcp.percentEncodedQuery?.replacingOccurrences(of: "+", with: "%2B")
@@ -80,6 +84,8 @@ public class SauceNao {
 			form.append(self.testmode, withName: "testmode")
 			form.append(String(numres), withName: "numres")
 			form.append(db, withName: "db")
+			//form.append("0", withName: "dbmask")
+			//form.append("0", withName: "dbmaski")
 			formData(form)
 		}, with: request, queue: queue) { (result) in
 			switch result {
@@ -89,7 +95,7 @@ public class SauceNao {
 						completion(nil, error)
 					}
 					do {
-						completion(try SauceNaoResult.parse(data: response.result.value), nil)
+                        completion(try SauceNaoResult.parse(data: response.result.value), nil)
 					} catch {
 						completion(nil, error)
 					}

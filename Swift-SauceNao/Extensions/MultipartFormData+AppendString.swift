@@ -1,6 +1,6 @@
 //
 //  MultipartFormData+AppendString.swift
-//  Swift-SauceNao_iOS
+//  Swift-SauceNao
 //
 //  Created by Jaquet Vincent on 27.02.19.
 //  Copyright © 2019 Vinrobot. All rights reserved.
