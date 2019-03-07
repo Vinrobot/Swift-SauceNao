@@ -221,6 +221,8 @@ public struct Result {
 	// data.part
 	// data.date
 	// data.characters
+	// data.da_id
+	// data.author_url
 
 	internal static func parse(result: [String: Any]) throws -> Result {
 		guard let header = result["header"] as? [String: Any] else {
@@ -257,6 +259,6 @@ public struct Result {
 		if authors != nil && data.removeValue(forKey: "member_name") == nil && data.removeValue(forKey: "author_name") == nil {
 			data.removeValue(forKey: "creator")
 		}
-		return Result.init(indexId: indexId, indexName: indexName, similarity: similarity, thumbnail: thumbnail, authors: authors, source: source, type: type, title: title, eng_name: engname, jap_name: japname, externalUrls: urls, data: data)
+		return Result(indexId: indexId, indexName: indexName, similarity: similarity, thumbnail: thumbnail, authors: authors, source: source, type: type, title: title, eng_name: engname, jap_name: japname, externalUrls: urls, data: data)
 	}
 }

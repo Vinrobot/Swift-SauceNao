@@ -19,10 +19,20 @@ public class SauceNao {
 
 	private let apiKey: String
 	private let testmode: String
+	private let skipLimiters: Bool
 
-	public init(apiKey: String, testmode: Bool = false) {
+	public init(apiKey: String, testmode: Bool = false, skipLimiters: Bool = true) {
 		self.apiKey = apiKey
 		self.testmode = testmode ? "1" : "0"
+		self.skipLimiters = skipLimiters
+	}
+
+	public func search(url: URL, db: Database, numres: UInt = SauceNao.defaultNumres, completion: @escaping CompletionBlock) {
+		self.search(url: url.absoluteString, db: String(db.id), numres: numres, completion: completion)
+	}
+
+	public func search(url: URL, db: String = SauceNao.defaultDatabaseId, numres: UInt = SauceNao.defaultNumres, completion: @escaping CompletionBlock) {
+		self.search(url: url.absoluteString, db: db, numres: numres, completion: completion)
 	}
 
 	public func search(url: String, db: Database, numres: UInt = SauceNao.defaultNumres, completion: @escaping CompletionBlock) {
@@ -56,12 +66,14 @@ public class SauceNao {
 	}
 
 	private func checkLimiters() -> Bool {
-		guard Limiter.longLimiter.canExecute() else {
-			return false
-		}
-		guard Limiter.shortLimiter.canExecute() else {
-			Limiter.longLimiter.cancelExecute()
-			return false
+		if !self.skipLimiters {
+			guard Limiter.longLimiter.canExecute() else {
+				return false
+			}
+			guard Limiter.shortLimiter.canExecute() else {
+				Limiter.longLimiter.cancelExecute()
+				return false
+			}
 		}
 		return true
 	}
@@ -95,7 +107,15 @@ public class SauceNao {
 						completion(nil, error)
 					}
 					do {
-                        completion(try SauceNaoResult.parse(data: response.result.value), nil)
+						let result = try SauceNaoResult.parse(data: response.result.value)
+						let limits = result.limits
+						if (limits.longRemaining >= 0) {
+							Limiter.longLimiter.setCount(UInt(limits.longLimit - limits.longRemaining))
+						}
+						if (limits.shortRemaining >= 0) {
+							Limiter.longLimiter.setCount(UInt(limits.shortLimit - limits.shortRemaining))
+						}
+						completion(result, nil)
 					} catch {
 						completion(nil, error)
 					}
