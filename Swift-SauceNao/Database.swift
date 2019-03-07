@@ -100,7 +100,7 @@ public struct Database: OptionSet {
 	public let name: String
 	public let bitmask: UInt
 
-	public init(rawValue: Database.RawValue) {
+	public init(rawValue: UInt) {
 		let id = UInt(flsl(Int(rawValue)))
 		self.init(id: id, name: "Database#\(id)", bitmask: rawValue)
 	}

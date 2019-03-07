@@ -11,7 +11,7 @@ import Alamofire
 
 public extension MultipartFormData {
 
-	public func append(_ str: String, withName name: String) {
+    func append(_ str: String, withName name: String) {
 		self.append(str.data(using: .utf8)!, withName: name)
 	}
 }
