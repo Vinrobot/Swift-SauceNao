@@ -3,29 +3,13 @@ SauceNAO API for Swift
 
 ## Requirements
 
-- iOS 8.0+, macOS 10.12+
-- Swift 4.2
+- iOS 9.0+, macOS 10.12+
+- Swift 5
+- Xcode 11+
 
 ## Installation
 
-### Carthage
-
-[Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks.
-
-You can install Carthage with [Homebrew](http://brew.sh/) using the following command:
-
-```bash
-$ brew update
-$ brew install carthage
-```
-
-To integrate Swift-SauceNao into your Xcode project using Carthage, specify it in your `Cartfile`:
-
-```cartfile
-github "Vinrobot/Swift-SauceNao"
-```
-
-Run `carthage update` to build the framework and drag the built `Swift_SauceNao.framework` into your Xcode project or follow [Carthage: Getting started](https://github.com/Carthage/Carthage#getting-started).
+Install using Swift Package Manager.
 
 ## How to use
 
@@ -86,4 +70,4 @@ saucenao.search(data: imageData, fileName: fileName, mimeType: mimeType) { (resu
 }
 ```
 
-3) Look at [SauceNaoResult.swift](Swift-SauceNao/SauceNaoResult.swift) to see the content of the `result` variable.
+3) Look at [SauceNaoResult.swift](Sources/Swift-SauceNao/SauceNaoResult.swift) to see the content of the `result` variable.
