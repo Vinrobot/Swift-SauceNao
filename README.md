@@ -3,7 +3,7 @@ SauceNAO API for Swift
 
 ## Requirements
 
-- iOS 8.0+, macOS 10.12+
+- iOS 9.0+, macOS 10.12+
 - Swift 4.2
 
 ## Installation
@@ -48,10 +48,10 @@ saucenao.search(url: url) { (result, error) in
 		print(error ?? "Unknown error")
 		return
 	}
-	
+
 	print("Long: \(result.limits.longRemaining) / \(result.limits.longLimit)")
 	print("Short: \(result.limits.shortRemaining) / \(result.limits.shortLimit)")
-	
+
 	if let results = result.results {
 		for res in results {
 			print(res.thumbnail)
