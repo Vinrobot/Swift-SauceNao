@@ -90,7 +90,7 @@ public class SauceNao {
 		var request = URLRequest(url: urlcp.url!)
 		request.httpMethod = "POST"
 		let queue = DispatchQueue(label: "request")
-		SessionManager.default.upload(multipartFormData: { (form) in
+		Session.default.upload(multipartFormData: { (form) in
 			form.append(self.apiKey, withName: "api_key")
 			form.append("2", withName: "output_type")
 			form.append(self.testmode, withName: "testmode")
@@ -99,31 +99,20 @@ public class SauceNao {
 			//form.append("0", withName: "dbmask")
 			//form.append("0", withName: "dbmaski")
 			formData(form)
-		}, with: request, queue: queue) { (result) in
-			switch result {
-			case .success(let request, _, _):
-				request.responseJSON(queue: queue, options: []) { response in
-					if let error = response.result.error {
-						completion(nil, error)
-					}
-					do {
-						let result = try SauceNaoResult.parse(data: response.result.value)
-						let limits = result.limits
-						if (limits.longRemaining >= 0) {
-							Limiter.longLimiter.setCount(UInt(limits.longLimit - limits.longRemaining))
-						}
-						if (limits.shortRemaining >= 0) {
-							Limiter.longLimiter.setCount(UInt(limits.shortLimit - limits.shortRemaining))
-						}
-						completion(result, nil)
-					} catch {
-						completion(nil, error)
-					}
+		}, with: request).validate().responseJSON(queue: queue) { (response) in
+			do {
+				let value = try response.result.get()
+				let result = try SauceNaoResult.parse(data: value)
+				let limits = result.limits
+				if (limits.longRemaining >= 0) {
+					Limiter.longLimiter.setCount(UInt(limits.longLimit - limits.longRemaining))
 				}
-				break
-			case .failure(let error):
+				if (limits.shortRemaining >= 0) {
+					Limiter.longLimiter.setCount(UInt(limits.shortLimit - limits.shortRemaining))
+				}
+				completion(result, nil)
+			} catch {
 				completion(nil, error)
-				break
 			}
 		}
 	}
